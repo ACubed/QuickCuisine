@@ -1,0 +1,16 @@
+
+
+/* Title div */
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+
+.title img {
+    scale: 50% 50%; 
+}
+
+.title div {
+    
+}
