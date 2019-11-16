@@ -1,28 +1,80 @@
 
-html {
+
+html, body {
+    overflow-y: hidden;
     height: 100%;
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 1);
+    background-image: linear-gradient(140deg, rgba(234, 243, 234, 0.7) 0%, rgba(0, 0, 0, 0.4));    
 }
 
-body {
-    height: 100%;
-    background-size: cover;
-    background-color: rgba(234, 234, 234, 0.5);
-    background-image: linear-gradient(140deg, rgba(234, 243, 234, 0.7) 20%, rgba(0, 0, 0, 0.3));
-    font-family: 'Roboto', sans-serif;
-    overflow-y:hidden;
+html,body:hover {
+    border: none;
 }
 
 button {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
     text-decoration: none;
-    padding : 5%;
-    background-color: rgba(38, 199, 211, 0.3);
+    padding:0;
+    background-color: rgba(0, 84, 156, 1);
+    
+
     border: none;
     cursor: pointer;
-    outline: none; 
+    outline: none;
     text-decoration:none;
-    border-radius: 2%;
+    border-radius: 10px;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin:0;
+    padding:0;
+}
+
+.sidebar {
+    background-color : white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    height: 100%;
+    width: 13%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    left: 0%;
     padding: 0;
-    font-size: 2em;
+    width: 100%;
+    height: 100%;
+}
+
+.category {
+    position: relative;
+}
+.category img {
+    height: auto;
+    width: 80%;
+}
+.items {
+    background-color: white;
+    width : 83%;
+    margin-left: -5%;
+    padding: 3%;
+}
+
+
+.item {
+    background-color: red;
 }
 
 .title {
@@ -31,7 +83,7 @@ button {
     display: flex;
     flex-direction: column; 
     justify-content: start;
-    align-items: center;
+    justify-items: center;
     margin: auto auto;
 }
 
@@ -40,16 +92,21 @@ button {
     width: 40%;
     margin: auto auto;
 }
- 
-.btn-order{
-    width: 40%;
+
+.orderbtn {
     height: auto;
+    width: 40%;
     margin: auto auto;
-    font-size: 4em;
+
+}
+.btn-order{
+    font-size: 3em;
+    width: 100%;
+    height: 100%;
 }
 
 button:hover{
-    background-color: rgba(27, 58, 88, 0.3);
+    background-color: rgba(27, 58, 88, 1);
     transition-duration: 0.166s;
     transition-delay: 0.1s;
 }
@@ -60,9 +117,15 @@ button:active{
 }
 
 .login {
-    left: 95%;
-    top: 0%;
+    left: 94.5%;
+    top: 1%;
     position: absolute;
     margin: auto auto;
-    z-index: 1;
+    height: auto;
+    width: 5%;
+}
+
+.btn-login {
+    height: 100%;
+    width: 100%;
 }
