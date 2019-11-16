@@ -1,5 +1,4 @@
-
-
+/*----------------------------- General ----------------------------- */
 html, body {
     overflow-y: hidden;
     height: 100%;
@@ -7,20 +6,21 @@ html, body {
     margin: 0;
     background-size: cover;
     background-color: rgba(255, 255, 255, 1);
-    background-image: linear-gradient(140deg, rgba(234, 243, 234, 0.7) 0%, rgba(0, 0, 0, 0.4));    
+    background-image: linear-gradient(140deg, rgba(234, 243, 234, 0.7) 0%, rgba(0, 0, 0, 0.4)); 
+    font-family: 'Open Sans', sans-serif;
+   
 }
 
 html,body:hover {
     border: none;
 }
 
+/*-----------------------------Elements----------------------------- */
 button {
-    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     text-decoration: none;
     padding:0;
-    background-color: rgba(0, 84, 156, 1);
-    
+    background-color: rgba(0, 84, 166, 1);
 
     border: none;
     cursor: pointer;
@@ -29,53 +29,18 @@ button {
     border-radius: 10px;
 }
 
-.container{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    margin:0;
-    padding:0;
+button:hover{
+    background-color: rgba(27, 58, 88, 1);
+    transition-duration: 0.166s;
+    transition-delay: 0.1s;
 }
 
-.sidebar {
-    background-color : white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    text-align: center;
-    height: 100%;
-    width: 13%;
+button:active{
+    background-color: rgba(27, 58, 88, .6);
+    border: none;
 }
 
-.menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    left: 0%;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.category {
-    position: relative;
-}
-.category img {
-    height: auto;
-    width: 80%;
-}
-.items {
-    background-color: white;
-    width : 83%;
-    margin-left: -5%;
-    padding: 3%;
-}
-
-
-.item {
-    background-color: red;
-}
+/*-----------------------------Start Screen-----------------------------*/
 
 .title {
     height: 100%; 
@@ -93,6 +58,86 @@ button {
     margin: auto auto;
 }
 
+/*-----------------------------Menus-----------------------------*/
+
+.btn-customize {
+    justify-content: right;
+    font-size: 1rem;
+    padding: 3px;
+}
+
+.btn-add {
+    justify-content: right;
+    font-size: 1.3rem;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    background-color : white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    height: 100%;
+    width: 15%;
+}
+
+.category {
+    width: 100%;
+    margin: auto;
+}
+
+
+.category img {
+    width: 100%;
+    height: auto;
+}
+
+.icon { 
+    opacity: 0.6;
+}
+.icon:hover{
+    opacity: 1;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    left: 0%;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+
+.menu-hidden {
+    visibility: hidden;
+}
+
+.items {
+    background-color: white;
+    width : 83%;
+    margin-left: -5%;
+    padding: 3%;
+}
+
+
+.item {
+    background-color: rgb(128, 128, 128);
+    height: 20%;
+}
+
+
+
 .orderbtn {
     height: auto;
     width: 40%;
@@ -105,16 +150,8 @@ button {
     height: 100%;
 }
 
-button:hover{
-    background-color: rgba(27, 58, 88, 1);
-    transition-duration: 0.166s;
-    transition-delay: 0.1s;
-}
 
-button:active{
-    background-color: rgba(27, 58, 88, .6);
-    border: none;
-}
+/* ----------------------------- Login ---------------------------*/
 
 .login {
     left: 94.5%;
@@ -123,9 +160,28 @@ button:active{
     margin: auto auto;
     height: auto;
     width: 5%;
+    color: #084166;
+    font-size: 5rem;
 }
 
 .btn-login {
+    height: 100%;
+    width: 100%;
+}
+
+/* ----------------------------- Cart ---------------------------*/
+.cart {
+    left: 94.5%;
+    top: 97%;
+    position: absolute;
+    margin: auto auto;
+    height: auto;
+    width: 5%;
+    color: #084166;
+    font-size: 5rem;
+}
+
+.btn-cart {
     height: 100%;
     width: 100%;
 }
