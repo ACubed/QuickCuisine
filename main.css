@@ -60,22 +60,45 @@ button:active{
 
 /*-----------------------------Menus-----------------------------*/
 
-.btn-customize {
-    float: right;
-    font-size: 1rem;
-    padding: 0.3rem;
+/*Containers*/
+.login-cart {
+    width: 8%;
+    height: 100%;
 }
 
-.btn-add {
-    float: right;
-    font-size: 1rem;
-    padding: 0.3rem;
+.menu {
+    visibility: visible;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.menu-hidden {
+    visibility: hidden;
+}
+
+.grid-container {
+    display: inline-grid;
+    padding: 0px;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    grid-template-areas:
+        'pic title cust  add  '
+        'pic types cals  cost ';
+    width: 100%;
+    height: 100%;
 }
 
 .container{
     height: 100%;
     width: 100%;
     display: flex;
+    justify-content: flex-start;
     flex-direction: row;
     margin: 0;
     padding: 0;
@@ -88,8 +111,29 @@ button:active{
     justify-content: space-evenly;
     text-align: center;
     height: 100%;
-    width: 15%;
+    width: 10%;
 }
+
+
+/*-----------------------------Menu Items-----------------------------*/
+
+
+
+.btn-customize {
+    font-size: 1rem;
+    padding: 0.3rem;
+    grid-area: cust;
+}
+
+.btn-add {
+    font-size: 1rem;
+    padding: 0.3rem;
+    grid-area: add;
+}
+
+
+
+
 
 .category {
     width: 100%;
@@ -109,32 +153,25 @@ button:active{
     opacity: 1;
 }
 
-.menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    left: 0%;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    visibility: visible;
-}
 
-.menu-hidden {
-    visibility: hidden;
-}
 
 .items {
     background-color: white;
-    width : 83%;
-    margin-left: -5%;
-    padding: 3%;
+    width: 100%;
 }
 
 
-.item {
+.item-even {
     background-color: rgb(128, 128, 128);
     height: 20%;
+    width: 100%;
+    float: left;
+}
+.item-odd {
+    background-color: rgb(74, 74, 74);
+    height: 20%;
+    width: 100%;
+    float: left;
 }
 
 
@@ -153,20 +190,21 @@ button:active{
 
 .cals {
     font-size: 2rem;
-    float: left;
     margin: auto auto;
+    grid-area: cals;
 }
 
 .price {
     font-size: 2rem;
     margin: auto auto;
-    float: right;
+    grid-area: cost;
 }
 
 .item-name {
     font-size: 1.5rem;
     margin: auto auto;
     float: left;
+    grid-area: title;
 }
 
 .item-top {
@@ -177,6 +215,18 @@ button:active{
 .item-bottom {
     display: flex;
     flex-direction: row;
+}
+
+.item-pic {
+    grid-area: pic;
+    padding:0;
+    margin: 0;
+    /* min-width: 64px;
+    min-height: 64px;
+    max-width: 128px;
+    max-height: 128px; */
+    height: 100%;
+    width: auto;
 }
 
 /* ----------------------------- Login ---------------------------*/
