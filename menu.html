@@ -6,17 +6,29 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3d46d02806.js"></script>
 </head>
-  
-<body>
-    <div class="container">
-        <div class="sidebar">
-            <nav class="navbar">
-                <a class="icon" href="index.html"> <div class="category"><img src="Assets/Images/icon_burger.png"></img></div> </a>
-                <a class="icon" href="index.html"> <div class="category"><img src="Assets/Images/icon_chicken.png"></img></div></a>                        <a class="icon" href="index.html"> <div class="category"><img src="Assets/Images/icon_pizza.png"></img></div></a>
-                <a class="icon" href="index.html"> <div class="category"><img src="Assets/Images/icon_fish.png"></img></div></a>                    <a class="icon" href="index.html"> <div class="category"><img src="Assets/Images/icon_icecream.png"></img></div></a>
-            </nav>
-        </div>
 
+<body>
+    <!-- the entire page -->
+    <div class="container">
+        <!-- LEFT sidebar: this contains the food items we can navigate to-->
+        <nav class="sidebar">
+            <a class="icon" href="index.html">
+                <div class="category"><img src="Assets/Images/icon_burger.png"></img></div>
+            </a>
+            <a class="icon" href="index.html">
+                <div class="category"><img src="Assets/Images/icon_chicken.png"></img></div>
+            </a>
+            <a class="icon" href="index.html">
+                <div class="category"><img src="Assets/Images/icon_pizza.png"></img></div>
+            </a>
+            <a class="icon" href="index.html">
+                <div class="category"><img src="Assets/Images/icon_fish.png"></img></div>
+            </a>
+            <a class="icon" href="index.html">
+                <div class="category"><img src="Assets/Images/icon_icecream.png"></img></div>
+            </a>
+        </nav>
+        <!-- The majority of the screen: this is used to represent all the food -->
         <div class="menu" id="burgers">
             <div class="items">
                 <div class="item-even">
@@ -24,9 +36,9 @@
                         <img class="item-pic" src="Assets/Images/food_placeholder.png"></img>
                         <p class="item-name">Dumbe thicccc burger</p>
                         <button class="btn-customize">Customize</button>
-                        <button class="btn-add">Add to order</button>  
+                        <button class="btn-add">Add to order</button>
                         <p class="cals">300 cals</p>
-                        <p class="price">$5.00</p>   
+                        <p class="price">$5.00</p>
                     </div>
                 </div>
                 <div class="item-odd">
@@ -34,33 +46,10 @@
                         <img class="item-pic" src="Assets/Images/food_placeholder.png"></img>
                         <p class="item-name">Dumbe thicccc burger</p>
                         <button class="btn-customize">Customize</button>
-                        <button class="btn-add">Add to order</button>  
+                        <button class="btn-add">Add to order</button>
                         <p class="cals">400 cals</p>
-                        <p class="price">$4.20</p>   
+                        <p class="price">$4.20</p>
 
-                    </div>
-                    
-                       
-                </div>
-                <div class="item-even">
-                        <div class="grid-container">
-                                <img class="item-pic" src="Assets/Images/food_placeholder.png"></img>
-                                <p class="item-name">Dumbe thicccc burger</p>
-                                <button class="btn-customize">Customize</button>
-                                <button class="btn-add">Add to order</button>  
-                                <p class="cals">600 cals</p>
-                                <p class="price">$6.00</p>   
-        
-                            </div>
-                </div>
-                <div class="item-odd">
-                    <div class="grid-container">                            
-                        <img class="item-pic" src="Assets/Images/food_placeholder.png"></img>
-                        <p class="item-name">Dumbe thicccc burger</p>
-                        <button class="btn-customize">Customize</button>
-                        <button class="btn-add">Add to order</button>  
-                        <p class="cals">670 cals</p>
-                        <p class="price">$4.70</p>   
                     </div>
                 </div>
                 <div class="item-even">
@@ -68,23 +57,43 @@
                         <img class="item-pic" src="Assets/Images/food_placeholder.png"></img>
                         <p class="item-name">Dumbe thicccc burger</p>
                         <button class="btn-customize">Customize</button>
-                        <button class="btn-add">Add to order</button>  
-                        <p class="cals">690 cals</p>
-                        <p class="price">$4.50</p>   
-    
+                        <button class="btn-add">Add to order</button>
+                        <p class="cals">600 cals</p>
+                        <p class="price">$6.00</p>
                     </div>
                 </div>
-
-            </div>
-            <div class="login-cart">
-                    <a class="login" href="menu.html">
-                        <i class="fas fa-user-circle"></i>
-                    </a>
-                    <a class="cart" href="menu.html">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>    
+                <div class="item-odd">
+                    <div class="grid-container">
+                        <img class="item-pic" src="Assets/Images/food_placeholder.png"></img>
+                        <p class="item-name">Dumbe thicccc burger</p>
+                        <button class="btn-customize">Customize</button>
+                        <button class="btn-add">Add to order</button>
+                        <p class="cals">670 cals</p>
+                        <p class="price">$4.70</p>
+                    </div>
                 </div>
+                <div class="item-even">
+                    <div class="grid-container">
+                        <img class="item-pic" src="Assets/Images/food_placeholder.png"></img>
+                        <p class="item-name">Dumbe thicccc burger</p>
+                        <button class="btn-customize">Customize</button>
+                        <button class="btn-add">Add to order</button>
+                        <p class="cals">690 cals</p>
+                        <p class="price">$4.50</p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- RIGHT sidebar: login and checkout-->
+            <nav class="sidebar">
+                <a class="login" href="menu.html">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a class="cart" href="menu.html">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </nav>
         </div>
     </div>
-</body>  
+</body>
 </html>
