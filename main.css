@@ -78,8 +78,13 @@ button:active{
     background-color: white;
 }
 
-.menu-hidden {
+.menu.hidden {
     visibility: hidden;
+    padding: 0;
+    margin: 0;
+    height:0;
+    width: 0;
+
 }
 
 .grid-container {
@@ -222,6 +227,79 @@ button:active{
     width: 100%;
     opacity: 0.6;
     height: auto;
+}
+
+/*------------------------------Customize------------------------*/
+
+/*--- grid items ---*/
+.customize-buttons {
+    background: rgba(0,0,0,0);
+}
+
+.title-item { 
+    grid-area: header;
+    font-size: 3rem
+}
+.image-item { grid-area: image;}
+.custom-button-item1 { 
+    margin-left: auto;
+    background-color: yellow;
+    grid-area: right1;
+}
+.custom-button-item2 {
+    margin-left: auto;
+    grid-area: right2;
+}
+.custom-button-item3 {
+    margin-left: auto;
+    grid-area: right3;
+}
+.custom-button-item4 {
+    margin-left: auto;
+    grid-area: right4;
+}
+.custom-button-item5 {
+    margin-left: auto;
+    grid-area: right5;
+}
+.custom-button-item6 {
+    margin-left: auto;
+    grid-area: right6;
+}
+.back-item { grid-area: back-button;}
+.footer-item { grid-area: footer;}
+.done-item { grid-area: done-button;}
+
+
+.customize-grid {
+    display: grid;
+    grid-template-areas: 'header header header'
+                        'image image spacing'
+                        'image image right1'
+                        'image image right2'
+                        'image image right3'
+                        'image image right4'
+                        'image image right5'
+                        'image image right6'
+                        'image image spacing2'
+                        'back-button spacing3 done-button';
+                        padding: 10px;
+                        grid-gap: 10px;
+                        font-size: 2rem;
+}
+
+.customize-grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 1px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.customize-add-remove {
+    font-size: 1rem;
+    padding: 1rem;
+    text-align: center;
 }
 
 /* ----------------------------- Cart ---------------------------*/
