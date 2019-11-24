@@ -99,6 +99,24 @@ button:active{
     height: 100%;
 }
 
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height:100%
+
+}
+
+.menu-row {
+    display: flex;
+    width: 100%;
+    height: 12.5%;
+    background-color:white;
+}
+.food-item {
+    width: 8%;
+    height: auto
+}
 .container{
     height: 100%;
     width: 100%;
