@@ -78,8 +78,13 @@ button:active{
     background-color: white;
 }
 
-.menu-hidden {
+.menu.hidden {
     visibility: hidden;
+    padding: 0;
+    margin: 0;
+    height:0;
+    width: 0;
+
 }
 
 .grid-container {
@@ -88,8 +93,8 @@ button:active{
     grid-column-gap: 4px;
     grid-row-gap: 4px;
     grid-template-areas:
-        'pic title cust  add  '
-        'pic types cals  cost ';
+        'pic title cals  cost  '
+        'pic types cust  add ';
     width: 100%;
     height: 100%;
 }
@@ -98,27 +103,21 @@ button:active{
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
     flex-direction: row;
-    margin: 0;
-    padding: 0;
 }
 
 .sidebar {
     background-color : white;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     text-align: center;
     height: 100%;
-    width: 10%;
+    width: 13%;
 }
 
 
 /*-----------------------------Menu Items-----------------------------*/
-
-
-
 .btn-customize {
     font-size: 1rem;
     padding: 0.3rem;
@@ -131,44 +130,36 @@ button:active{
     grid-area: add;
 }
 
-
-
-
-
 .category {
-    width: 100%;
-    margin: auto;
+    display: inline-block;
+    width: 90%;
+    opacity: 0.6;
 }
-
 
 .category img {
     width: 100%;
     height: auto;
 }
 
-.icon { 
-    opacity: 0.6;
-}
-.icon:hover{
+.category:hover{
     opacity: 1;
 }
-
-
 
 .items {
     background-color: white;
     width: 100%;
 }
 
-
 .item-even {
-    background-color: rgb(128, 128, 128);
+    background-color: rgb(210, 210, 210);
+
     height: 20%;
     width: 100%;
     float: left;
 }
+
 .item-odd {
-    background-color: rgb(74, 74, 74);
+    background-color: rgb(230, 230, 230);
     height: 20%;
     width: 100%;
     float: left;
@@ -232,34 +223,96 @@ button:active{
 /* ----------------------------- Login ---------------------------*/
 
 .login {
-    left: 94.5%;
-    top: 1%;
-    position: absolute;
-    margin: auto auto;
-    height: auto;
-    width: 5%;
-    color: #084166;
+    color: rgb(70, 70, 70);
     font-size: 5rem;
+    width: 100%;
+    opacity: 0.6;
+    height: auto;
 }
 
-.btn-login {
-    height: 100%;
-    width: 100%;
+/*------------------------------Customize------------------------*/
+
+/*--- grid items ---*/
+.customize-buttons {
+    background: rgba(0,0,0,0);
+}
+
+.title-item { 
+    grid-area: header;
+    font-size: 3rem
+}
+.image-item { grid-area: image;}
+.custom-button-item1 { 
+    margin-left: auto;
+    background-color: yellow;
+    grid-area: right1;
+}
+.custom-button-item2 {
+    margin-left: auto;
+    grid-area: right2;
+}
+.custom-button-item3 {
+    margin-left: auto;
+    grid-area: right3;
+}
+.custom-button-item4 {
+    margin-left: auto;
+    grid-area: right4;
+}
+.custom-button-item5 {
+    margin-left: auto;
+    grid-area: right5;
+}
+.custom-button-item6 {
+    margin-left: auto;
+    grid-area: right6;
+}
+.back-item { grid-area: back-button;}
+.footer-item { grid-area: footer;}
+.done-item { grid-area: done-button;}
+
+
+.customize-grid {
+    display: grid;
+    grid-template-areas: 'header header header'
+                        'image image spacing'
+                        'image image right1'
+                        'image image right2'
+                        'image image right3'
+                        'image image right4'
+                        'image image right5'
+                        'image image right6'
+                        'image image spacing2'
+                        'back-button spacing3 done-button';
+                        padding: 10px;
+                        grid-gap: 10px;
+                        font-size: 2rem;
+}
+
+.customize-grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 1px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.customize-add-remove {
+    font-size: 1rem;
+    padding: 1rem;
+    text-align: center;
 }
 
 /* ----------------------------- Cart ---------------------------*/
 .cart {
-    left: 93%;
-    top: 86%;
-    position: absolute;
-    margin: auto auto;
+    margin-top: auto;
+    width: 100%;
     height: auto;
-    width: 5%;
-    color: #084166;
+    color: rgb(70, 70, 70);
+    opacity: 0.6;
     font-size: 5rem;
 }
 
-.btn-cart {
-    height: 100%;
-    width: 100%;
+.cart:hover, .login:hover{
+    opacity: 1;
 }
