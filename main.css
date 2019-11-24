@@ -8,7 +8,6 @@ html, body {
     background-color: rgba(255, 255, 255, 1);
     background-image: linear-gradient(140deg, rgba(234, 243, 234, 0.7) 0%, rgba(0, 0, 0, 0.4)); 
     font-family: 'Open Sans', sans-serif;
-   
 }
 
 html,body:hover {
@@ -21,7 +20,6 @@ button {
     text-decoration: none;
     padding:0;
     background-color: rgba(0, 84, 166, 1);
-
     border: none;
     cursor: pointer;
     outline: none;
@@ -33,6 +31,7 @@ button:hover{
     background-color: rgba(27, 58, 88, 1);
     transition-duration: 0.166s;
     transition-delay: 0.1s;
+    cursor: pointer;
 }
 
 button:active{
@@ -41,6 +40,9 @@ button:active{
 }
 
 /*-----------------------------Start Screen-----------------------------*/
+.icon {
+    cursor: pointer;
+}
 
 .title {
     height: 100%; 
@@ -78,25 +80,13 @@ button:active{
     background-color: white;
 }
 
-.menu.hidden {
+.menu-container.hidden {
     visibility: hidden;
     padding: 0;
     margin: 0;
     height:0;
     width: 0;
 
-}
-
-.grid-container {
-    display: inline-grid;
-    padding: 0px;
-    grid-column-gap: 4px;
-    grid-row-gap: 4px;
-    grid-template-areas:
-        'pic title cals  cost  '
-        'pic types cust  add ';
-    width: 100%;
-    height: 100%;
 }
 
 .menu-container {
@@ -109,12 +99,23 @@ button:active{
 .menu-row {
     display: flex;
     width: 100%;
-
-    height: 156px;
+    min-width: 500px;
+    min-height: 130px;
     color: white;
 }
 
+.row-buttons {
+    width:20%;
+    height:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top:auto;
+    margin-bottom:auto;
+
+}
 .row-text {
+    width: 70%;
     font-family: 'Open Sans', sans-serif;
     flex-direction: column;
     align-items: center;
@@ -130,7 +131,7 @@ button:active{
     display:flex; 
     flex-direction: row;
     margin-top: -15px;
-    width: 6%;
+    width: 50px;
     height: auto;
     justify-content: space-between;
 }
@@ -140,6 +141,11 @@ button:active{
 }
 .calorie {
     margin-top: -5px;
+    font-size: medium;
+}
+
+.cost {
+    text-align: center;
 }
 
 .container{
@@ -156,112 +162,47 @@ button:active{
     justify-content: space-around;
     text-align: center;
     height: auto;
-    width: 13%;
+    width: 150px;
 }
 
 
 /*-----------------------------Menu Items-----------------------------*/
 .btn-customize {
-    font-size: 1rem;
-    padding: 0.3rem;
-    grid-area: cust;
+    width: auto;
+    height:100%;
+    opacity: .7;
 }
 
 .btn-add {
-    font-size: 1rem;
-    padding: 0.3rem;
-    grid-area: add;
+    width:auto;
+    height:100%;
+    opacity:.7;
+}
+
+.btn-customize:hover{
+    opacity: 1;
+}
+
+.btn-add:hover {
+    opacity:1;
 }
 
 .category {
     display: inline-block;
-    width: 90%;
+    width: 150px;
+    height: auto;
     opacity: 0.6;
 }
 
 .category img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .category:hover{
     opacity: 1;
 }
 
-.items {
-    background-color: white;
-    width: 100%;
-}
-
-.item-even {
-    background-color: rgb(210, 210, 210);
-
-    height: 20%;
-    width: 100%;
-    float: left;
-}
-
-.item-odd {
-    background-color: rgb(230, 230, 230);
-    height: 20%;
-    width: 100%;
-    float: left;
-}
-
-
-
-.orderbtn {
-    height: auto;
-    width: 40%;
-    margin: auto auto;
-
-}
-.btn-order{
-    font-size: 3em;
-    width: 100%;
-    height: 100%;
-}
-
-.cals {
-    font-size: 2rem;
-    margin: auto auto;
-    grid-area: cals;
-}
-
-.price {
-    font-size: 2rem;
-    margin: auto auto;
-    grid-area: cost;
-}
-
-.item-name {
-    font-size: 1.5rem;
-    margin: auto auto;
-    float: left;
-    grid-area: title;
-}
-
-.item-top {
-    display: flex;
-    flex-direction: row;
-}
-
-.item-bottom {
-    display: flex;
-    flex-direction: row;
-}
-
-.item-pic {
-    grid-area: pic;
-    padding:0;
-    margin: 0;
-    /* min-width: 64px;
-    min-height: 64px;
-    max-width: 128px;
-    max-height: 128px; */
-    height: 100%;
-    width: auto;
-}
 
 /* ----------------------------- Login ---------------------------*/
 
@@ -358,4 +299,72 @@ button:active{
 
 .cart:hover, .login:hover{
     opacity: 1;
+    cursor: pointer;
 }
+
+
+/* ----------------------------- Login ---------------------------*/
+
+.login-container {
+    width: 40%;
+    height: 40%;
+    visibility: visible;
+    margin: auto auto;
+    padding:1rem;
+}
+
+.login-container.hidden {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+  /* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.login-form-container {
+    z-index: 1; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 2%;
+  }
+
+  /* The Close Button (x) */
+  .close {
+    right: 5%;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
