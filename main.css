@@ -90,8 +90,8 @@ button:active{
 .grid-container {
     display: inline-grid;
     padding: 0px;
-    grid-column-gap: 4px;
-    grid-row-gap: 4px;
+
+
     grid-template-areas:
         'pic title cals  cost  '
         'pic types cust  add ';
@@ -180,13 +180,13 @@ button:active{
 }
 
 .cals {
-    font-size: 2rem;
+    font-size: 1rem;
     margin: auto auto;
     grid-area: cals;
 }
 
 .price {
-    font-size: 2rem;
+    font-size: 1rem;
     margin: auto auto;
     grid-area: cost;
 }
