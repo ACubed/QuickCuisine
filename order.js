@@ -49,38 +49,13 @@ class CartItem {
 
 let burgers = [];
 let cart = new Cart();
-cart.add(new CartItem(burgers[0], 2));
+//cart.add(new CartItem(burgers[0], 2));
 
 
-function initializeItems() {
-    for(i = 0; i < 5; i++){
-        burgers.push(new Item('Burger 1', 5.00, 500, ['Vegan', 'Bad']));
-    }
-}
+// function initializeItems() {
+//     for(i = 0; i < 5; i++){
+//         burgers.push(new Item('Burger 1', 5.00, 500, ['Vegan', 'Bad']));
+//     }
+// }
 
 
-
-$('#burgers-icon').on('click', function () {
-    $('.menu').addClass('hidden');
-    $('#burgers').removeClass('hidden');
-});
-
-$('#chicken-icon').on('click', function () {
-    $('.menu').addClass('hidden');
-    $('#chicken').removeClass('hidden');
-});
-
-$('#pizza-icon').on('click', function () {
-    $('.menu').addClass('hidden');
-    $('#pizza').removeClass('hidden');
-});
-
-$('#fish-icon').on('click', function () {
-    $('.menu').addClass('hidden');
-    $('#fish').removeClass('hidden');
-});
-
-$('#icecream-icon').on('click', function () {
-    $('.menu').addClass('hidden');
-    $('#icecream').removeClass('hidden');
-});
