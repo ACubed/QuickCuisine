@@ -103,15 +103,15 @@ button:active{
     display: flex;
     flex-direction: column;
     width:100%;
-    height:100%
-
+    height: 100%;
+    overflow-y: scroll;
 }
 .menu-row {
     display: flex;
     width: 100%;
-    height: auto;
-    min-height:20%;
-    background-color:white;
+
+    height: 156px;
+    color: white;
 }
 
 .row-text {
@@ -122,7 +122,7 @@ button:active{
 
 
 .food-item {
-    width: 13%;
+    width: 150px;
     height: auto;
 }
 
@@ -150,7 +150,7 @@ button:active{
 }
 
 .sidebar {
-    background-color : white;
+    background-color: silver;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
