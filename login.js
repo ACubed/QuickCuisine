@@ -1,5 +1,5 @@
-let userName = "HCI23"
-let password = 
+let userName = "HCI23";
+let password = "12345";
 loggingIn = false;
 $('.login').on('click', function () {
     if(!loggingIn) {
