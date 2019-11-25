@@ -60,6 +60,16 @@ button:active{
     margin: auto auto;
 }
 
+.btn-order {
+    padding:50px;
+    font-size: 40px;
+}
+
+.orderbtn {
+    height: auto;
+    margin: auto auto;
+}
+
 /*-----------------------------Menus-----------------------------*/
 
 /*Containers*/
@@ -105,13 +115,15 @@ button:active{
 }
 
 .row-buttons {
-    width:20%;
-    height:100%;
+    width:auto;
+    height:126px;
     display:flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-top:auto;
-    margin-bottom:auto;
+    margin-top:2px;
+    margin-bottom:2px;
+    margin-right:2px;
+    margin-left:2px;
 
 }
 .row-text {
@@ -122,7 +134,7 @@ button:active{
 }
 
 
-.food-item {
+.food-item {  
     width: 150px;
     height: auto;
 }
@@ -136,9 +148,49 @@ button:active{
     justify-content: space-between;
 }
 
-.food-group-item{
+.food-group-item {
     width: 50%;
 }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip img {
+    height: 5%;
+    width: auto;
+}
+  
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 110%;
+}
+  
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 .calorie {
     margin-top: -5px;
     font-size: medium;
@@ -181,10 +233,12 @@ button:active{
 
 .btn-customize:hover{
     opacity: 1;
+    cursor: pointer;
 }
 
 .btn-add:hover {
     opacity:1;
+    cursor: pointer;
 }
 
 .category {
@@ -194,9 +248,21 @@ button:active{
     opacity: 0.6;
 }
 
+.category.selected {
+    display: inline-block;
+    width: 150px;
+    height: auto;
+    opacity: 1;
+}
+
 .category img {
     width: 100%;
     height: 100%;
+}
+
+.category.selected {
+    opacity:1;
+    background-color: rgba(0,84,166,0.4);
 }
 
 .category:hover{
@@ -216,75 +282,31 @@ button:active{
 
 /*------------------------------Customize------------------------*/
 
-/*--- grid items ---*/
-.customize-buttons {
-    background: rgba(0,0,0,0);
+.customize-container {
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.title-item { 
-    grid-area: header;
-    font-size: 3rem
-}
-.image-item { grid-area: image;}
-.custom-button-item1 { 
-    margin-left: auto;
-    background-color: yellow;
-    grid-area: right1;
-}
-.custom-button-item2 {
-    margin-left: auto;
-    grid-area: right2;
-}
-.custom-button-item3 {
-    margin-left: auto;
-    grid-area: right3;
-}
-.custom-button-item4 {
-    margin-left: auto;
-    grid-area: right4;
-}
-.custom-button-item5 {
-    margin-left: auto;
-    grid-area: right5;
-}
-.custom-button-item6 {
-    margin-left: auto;
-    grid-area: right6;
-}
-.back-item { grid-area: back-button;}
-.footer-item { grid-area: footer;}
-.done-item { grid-area: done-button;}
-
-
-.customize-grid {
-    display: grid;
-    grid-template-areas: 'header header header'
-                        'image image spacing'
-                        'image image right1'
-                        'image image right2'
-                        'image image right3'
-                        'image image right4'
-                        'image image right5'
-                        'image image right6'
-                        'image image spacing2'
-                        'back-button spacing3 done-button';
-                        padding: 10px;
-                        grid-gap: 10px;
-                        font-size: 2rem;
+.customize-row {
+    width: 100%;
+    height: 20%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.customize-grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 1px;
-    font-size: 30px;
-    text-align: center;
+.customize-row-image {
+    height: 160px;
+    width: 500px;
 }
 
-.customize-add-remove {
-    font-size: 1rem;
-    padding: 1rem;
-    text-align: center;
+.btn-plus{
+    width:160px;
+    height:160px;
 }
 
 /* ----------------------------- Cart ---------------------------*/
@@ -306,11 +328,12 @@ button:active{
 /* ----------------------------- Login ---------------------------*/
 
 .login-container {
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    right:150px;
+    background-color: rgb(85,141,196);
     visibility: visible;
-    margin: auto auto;
-    padding:1rem;
 }
 
 .login-container.hidden {
@@ -338,33 +361,8 @@ input[type=text], input[type=password] {
     background-color: #f44336;
 }
 
-.login-form-container {
-    z-index: 1; /* Sit on top */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 2%;
-  }
-
-  /* The Close Button (x) */
-  .close {
-    right: 5%;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: red;
-    cursor: pointer;
-  }
-  
-  /* Add Zoom Animation */
-  .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-  }
+.btn-login {
+    width: auto;
+    padding: 10px 18px;
+    background-color: rgb(70, 70, 70);
+}
