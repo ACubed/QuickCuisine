@@ -146,9 +146,12 @@ function createItem(element) {
         var itemCals = document.createElement("p");
         itemCals.innerHTML = element.getCals();
         itemCals.classList.add('cart-item-cals');
+        var itemQuantity = document.createElement("p");
+        itemCals.classList.add('cart-item-quantity');
         itemDiv.appendChild(itemImg);
         itemDiv.appendChild(itemCals);
         itemDiv.appendChild(itemTitle);
+        itemDiv.appendChild(itemQuantity);
         var cartDiv = document.getElementsByClassName('Cart');
         cartDiv[0].appendChild(itemDiv);
 }
