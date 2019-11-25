@@ -76,6 +76,7 @@ button:active{
 .login-cart {
     width: 8%;
     height: 100%;
+    color: white;
 }
 
 .menu {
@@ -208,7 +209,7 @@ button:active{
 }
 
 .sidebar {
-    background-color: silver;
+    background-color: rgb(27, 24, 24);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -273,11 +274,12 @@ button:active{
 /* ----------------------------- Login ---------------------------*/
 
 .login {
-    color: rgb(70, 70, 70);
+    color: white;
     font-size: 5rem;
     width: 100%;
     opacity: 0.6;
     height: auto;
+
 }
 
 /*------------------------------Customize------------------------*/
@@ -319,7 +321,7 @@ button:active{
     margin-top: auto;
     width: 100%;
     height: auto;
-    color: rgb(70, 70, 70);
+    color: white;
     opacity: 0.6;
     font-size: 5rem;
 }
