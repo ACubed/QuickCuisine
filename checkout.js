@@ -91,18 +91,22 @@ function buildListFromCookies() {
     for (let i = 0; i < cookies.length; i++) {
         let params = cookies[i].split(',');
         console.log(params);
+        if (params.length > 2) {
+            
+            let separator = params[0].indexOf('=');
 
-        let separator = params[0].indexOf('=');
+            let tag = params[0].slice(0, separator);     
+            
+            let name = params[0].slice(separator + 1, params[0].length);
+            let quantity = params[1];
+            let cost = params[2];
+            let cals = params[3];
+    
+            let result = new Item(name, tag, cost, cals);
 
-        let tag = params[0].slice(0, separator);       
-        let name = params[0].slice(separator + 1, params[0].length);
-        let quantity = params[1];
-        let cost = params[2];
-        let cals = params[3];
- 
-        let result = new Item(name, tag, cost, cals);
+            ItemList.push(new CartItem(result, quantity));
+        }
 
-        ItemList.push(new CartItem(result, quantity));
     }
 
     console.log(ItemList);
@@ -132,14 +136,17 @@ function UpdateCart() {
     cals.innerHTML = 'Total Calories: ' + totalCals.toString(); 
     // var cartCounter = document.getElementById("cart-counter");
     // cartCounter.innerHTML = totalQuantity;
+    var even = true;
     ItemList.forEach(element => {
-        createItem(element);
+        
+        createItem(element, even);
+        even = !even;
     });
     
 
 }
 
-function createItem(element) {
+function createItem(element, even) {
     var itemDiv = document.createElement("div");
         itemDiv.classList.add('cart-item-container');
         var itemImg = document.createElement("img");
@@ -155,21 +162,44 @@ function createItem(element) {
         var itemCals = document.createElement("p");
         itemCals.innerHTML = element.getCals() + ' Cals';
         itemCals.classList.add('cart-item-cals');
+        var itemQuantityDiv = document.createElement("div");
+        itemQuantityDiv.classList.add('item-quantity-div');
         var itemQuantity = document.createElement("p");
-        itemQuantity.innerHTML = 'Quantity: ' + element.getQuantity();
+        itemQuantity.innerHTML = element.getQuantity();
+        itemQuantity.classList.add('cart-item-quantity');
         var increaseQuantity = document.createElement("img");
         var decreaseQuantity = document.createElement("img");
-        increaseQuantity.src = "Assets/Buttons/button_plus.png";
-        decreaseQuantity.src = "Assets/Buttons/button_minus.png";
-        increaseQuantity.classList.add('cart-item-plusorminus')
-        decreasequantity.classList.add('cart-item-plusorminus')
+        increaseQuantity.src = ("Assets/Images/Buttons/button_plus.png").replace(/\s/g, '');
+        decreaseQuantity.src = ("Assets/Images/Buttons/button_minus.png").replace(/\s/g, '');
+        increaseQuantity.classList.add('cart-item-plus')
+        decreaseQuantity.classList.add('cart-item-minus')
+        increaseQuantity.setAttribute('id', 'cart-item-button');
+        decreaseQuantity.setAttribute('id', 'cart-item-button');
         itemDiv.appendChild(itemImg);
         itemDiv.appendChild(itemTitle);
         itemDiv.appendChild(itemCals);
-        itemDiv.appendChild(decreaseQuantity);
-        itemDiv.appendChild(itemQuantity);
-        itemDiv.appendChild(increaseQuantity);
         itemDiv.appendChild(itemCost);
+        itemQuantityDiv.appendChild(decreaseQuantity);
+        itemQuantityDiv.appendChild(itemQuantity);
+        itemQuantityDiv.appendChild(increaseQuantity);
         var cartDiv = document.getElementsByClassName('Cart')[0];
-        cartDiv.appendChild(itemDiv);
+        var itemRow = document.createElement("div");
+        itemRow.classList.add('cart-row');
+        itemRow.appendChild(itemDiv);
+        itemRow.appendChild(itemQuantityDiv);
+        cartDiv.appendChild(itemRow);
+        if(even) itemRow.classList.add('even');
+        else itemRow.classList.add('odd');
+        
 }
+
+
+$('#cart-item-button').on('click', function () {
+    console.log("WTF");
+    alert("Feature not yet implemented!");
+    // cart.add(new CartItem(Burger1, 1))
+});
+
+// $('.cart-item-div.item-quantity-div.cart-item-plus').on('click', function () {
+//     $('.cart-item-div.item-quantity-div');
+// });

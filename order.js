@@ -1,30 +1,43 @@
 
-function addCartItem(cartItem) {
-    let name = cartItem.getImagePath();
-    let cq = getCookie("cartQuantity");
-    var qString = "";
-    var totalQuantity = 1;
+window.onload = function() {
     console.log(document.cookie);
+    this.updateFlag(0);
+};
+
+function updateFlag(increment) {
+    var cq = getCookie("cart_num");
+    var totalQuantity = 0;
     if (cq != null) {
-        let array = cq.split(',');
-        totalQuantity = parseInt(array[1]) + 1;
-        qString = "cartQuantity="+parseInt(totalQuantity) + "; path=/";
-        document.cookie = qString;
+        totalQuantity = parseInt(cq) + increment;
+        document.cookie = "cart_num="+ totalQuantity + "; path=/";
     } else {
-        qString = "cartQuantity=1; path=/";
-        document.cookie = qString;
+        document.cookie = "cart_num=0; path=/";
+    }
+    let flag = document.getElementById("cart-counter");
+    var string = totalQuantity.toString();
+    if (totalQuantity === 0) {
+        string = "";
     }
 
-    let flag = document.getElementById("cart-counter");
-    flag.innerHTML = totalQuantity.toString();
+    flag.innerHTML = string;
+}
 
-    console.log(document.cookie);
+
+function removeCustomTag() {
+    document.cookie = "current_customization=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+}
+
+function addCartItem(cartItem) {
+    
+    let name = cartItem.getImagePath();
+    
+    updateFlag(1);
 
     var quantity = parseInt(cartItem.getQuantity());
 
     var c = getCookie(name);
     if (c !== null) {
-        let array = c.split(',');
+        var array = c.split(',');
         quantity += parseInt(array[1]);
     }
     var cost = cartItem.getCost();
@@ -51,6 +64,16 @@ function getCookie(name) {
     }
     return decodeURI(dc.substring(begin + prefix.length, end));
 } 
+// function getCookie(name) {
+//     var nameEQ = name + "=";
+//     var ca = document.cookie.split(';');
+//     for(var i=0;i < ca.length;i++) {
+//         var c = ca[i];
+//         while (c.charAt(0)==' ') c = c.substring(1,c.length);
+//         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+//     }
+//     return null;
+// }
 
 class CartItem {
     item;
@@ -105,7 +128,7 @@ let Burger3 = new Item("Full Stack","burger_full_stack", 9.49, 900);
 let Burger4 = new Item("The Burgler", "burger_burgler",14.99, 1106);
 let Burger5 = new Item("Whoppersnapper","burger_whoppersnapper", 7.49, 820);
 let Burger6 = new Item("Chicken Paradise","burger_chicken_paradise", 7.79, 675);
-let Burger7 = new Item("Macho Onion BBQ","burger_", 8.79, 950);
+let Burger7 = new Item("Macho Onion BBQ","burger_onion_bbq", 8.79, 950);
 let Burger8 = new Item("The Honey Mustard", "burger_full_stack",6.99, 640);
 
 // soups
@@ -185,11 +208,9 @@ $('#add-burger8').on('click', function () {
     // cart.add(new CartItem(Burger8, 1));
 });
 
-// // soups
-// $('#add-big-burger').on('click', function () {
-//     cart.add(new CartItem(BigBurger, 1));
-// });
 
+
+// // soups
 // $('#add-big-burger').on('click', function () {
 //     cart.add(new CartItem(BigBurger, 1));
 // });
@@ -232,6 +253,13 @@ $('#add-burger8').on('click', function () {
 //     cart.add(new CartItem(BigBurger, 1));
 // });
 // $('#add-big-burger').on('click', function () {
+//     cart.add(new CartItem(BigBurger, 1));
+// });
+// $('#add-big-burger').on('click', function () {
+//     cart.add(new CartItem(BigBurger, 1));
+// });
+//     cart.add(new CartItem(BigBurger, 1));
+// });
 //     cart.add(new CartItem(BigBurger, 1));
 // });
 
