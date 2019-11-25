@@ -289,6 +289,7 @@ button:active{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgb(70,70,70);
 }
 
 .customize-row {
@@ -309,6 +310,10 @@ button:active{
     height:160px;
 }
 
+.counter {
+    color: white;
+    margin-left: -30px;
+}
 /* ----------------------------- Cart ---------------------------*/
 .cart {
     margin-top: auto;
@@ -334,6 +339,8 @@ button:active{
     right:150px;
     background-color: rgb(85,141,196);
     visibility: visible;
+    align-items: center;
+    display: flex;
 }
 
 .login-container.hidden {

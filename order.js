@@ -1,87 +1,43 @@
 
-function setCookie(cartItem) {
-    // console.log(numItemsCookie);
-
-    let name = cartItem.getName();
-    console.log(getCookie(name));
+function addCartItem(cartItem) {
+    let name = cartItem.getImagePath();
     
-    var c = getCookie("burger_burgler");
-    var quantity = cartItem.getQuantity();
-    if (c === "") {
-        console.log("is Null");
-    } else {
+    var quantity = parseInt(cartItem.getQuantity());
+
+    var c = getCookie(name);
+    if (c !== null) {
         var array = c.split(',');
-        quantity += array[1];
+        quantity += parseInt(array[1]);
     }
-  var cost = cartItem.getCost();
+    var cost = cartItem.getCost();
     var cals = cartItem.getCals();
-    var imagepath = cartItem.getImagePath();
-    var cString = imagepath + "=" + name + "," + quantity + "," + cost + "," + cals + "," + imagepath + ";";
+    var itemTitle = cartItem.getName();
+    var cString = name + "=" + itemTitle + "," + quantity + "," + cost + "," + cals + ";";
     document.cookie = cString;
 }
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);h);
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    } else {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+            end = dc.length;
         }
     }
-    return "";
-}
-function splitCookie(entry) {
-    var array = entry.split(',');
-    for (let i = 0; i < array.length; i++) {consolelog(array[i]);
-    }
-}
-
-// class Cart {
-
-// 
-// class Cart {
-//     subtotal = 0.00;
-//     tax = 0.00;
-//     total = 0.00;
-//     items = [];
-//     constructor(){
-//         this.updateDisplay();
-//     }
-
-//     // add(cartItem) {
-
-//     //     // this.items.push(cartItem);
-//     //     // this.subtotal += cartItem.getCost;
-//     //     // this.tax = this.subtotal * 0.12;
-//     //     // this.total = this.subtotal + this.tax;
-//     //     // this.updateDisplay();
-//     //     // console.log('Added to cart' + this.items.toString());
-//     // }
-    
-//     // updateDisplay() {
-//     //     let cartElement = document.createElement("div");
-//     //     cartElement.addClass('cart-items');
-//     //     items.array.forEach(item => {
-//     //         let row = document.createElement("div");
-//     //         row.addClass('order-row');
-//     //         let image = document.createElement("img");
-//     //         image.src = "Assets/Images/Food/" + item.getImagePath + ".png"; 
-            
-//     //     });     
-//     // } 
-
-// }
+    return decodeURI(dc.substring(begin + prefix.length, end));
+} 
 
 class CartItem {
     item;
     quantity;
-    cost
-    cals;;
+    cost;
+    cals;
     constructor(item, quantity) {
         this.item = item;
         this.quantity = quantity;
@@ -181,36 +137,36 @@ let Burger8 = new Item("The Honey Mustard", "burger_full_stack",6.99, 640);
 
 // burgers
 $('#add-burger1').on('click', function () {
-    setCookie(new CartItem(Burger1, 1))
+    addCartItem(new CartItem(Burger1, 1))
     // cart.add(new CartItem(Burger1, 1))
     console.log(document.cookie);
 });
 $('#add-burger2').on('click', function () {
-    setCookie(new CartItem(Burger2, 1))
+    addCartItem(new CartItem(Burger2, 1))
     // cart.add(new CartItem(Burger2, 1));
 });
 $('#add-burger3').on('click', function () {
-    setCookie(new CartItem(Burger3, 1))
+    addCartItem(new CartItem(Burger3, 1))
     // cart.add(new CartItem(Burger3, 1));
 });
 $('#add-burger4').on('click', function () {
-    setCookie(new CartItem(Burger4, 1))
+    addCartItem(new CartItem(Burger4, 1))
     // cart.add(new CartItem(Burger4, 1));
 });
 $('#add-burger5').on('click', function () {
-    setCookie(new CartItem(Burger5, 1))
+    addCartItem(new CartItem(Burger5, 1))
     // cart.add(new CartItem(Burger5, 1));
 });
 $('#add-burger6').on('click', function () {
-    setCookie(new CartItem(Burger6, 1))
+    addCartItem(new CartItem(Burger6, 1))
     // cart.add(new CartItem(Burger6, 1));
 });
 $('#add-burger7').on('click', function () {
-    setCookie(new CartItem(Burger7, 1))
+    addCartItem(new CartItem(Burger7, 1))
     // cart.add(new CartItem(Burger7, 1));
 });
 $('#add-burger8').on('click', function () {
-    setCookie(new CartItem(Burger8, 1))
+    addCartItem(new CartItem(Burger8, 1))
     // cart.add(new CartItem(Burger8, 1));
 });
 

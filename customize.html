@@ -5,6 +5,49 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/3d46d02806.js"></script>
+
+	<script>
+		const maxIngredients = 4;
+		let numTomatoes = 1;
+		let numCheese = 1;
+		let numPatties = 1;
+
+		//TOMATOES
+		function incrementTomatoes() {
+			if(numTomatoes < maxIngredients)
+				numTomatoes++;
+		  	document.getElementById("tomato").innerHTML = numTomatoes;
+		}
+		function decrementTomatoes() {
+			if(numTomatoes > 0)
+				numTomatoes--;
+		  	document.getElementById("tomato").innerHTML = numTomatoes;
+		}
+
+		//CHEESE
+		function incrementCheese() {
+			if(numCheese < maxIngredients)
+				numCheese++;
+		  	document.getElementById("cheese").innerHTML = numCheese;
+		}
+		function decrementCheese() {
+			if(numCheese > 0)
+				numCheese--;
+		  	document.getElementById("cheese").innerHTML = numCheese;
+		}
+
+		//PATTIES
+		function incrementPatties() {
+			if(numPatties< maxIngredients)
+				numPatties++;
+		  	document.getElementById("patties").innerHTML = numPatties;
+		}
+		function decrementPatties() {
+			if(numPatties> 0)
+				numPatties--;
+		  	document.getElementById("patties").innerHTML = numPatties;
+		}
+	</script>
 </head>
 
 <body>
@@ -20,49 +63,42 @@
 		<div class="customize-container">
 
 			<div class="customize-row">
-				<a>
-					<img src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
-				</a>
 				<img src="Assets/Images/Customize/split_bun.png" class="customize-row-image">
-				<a>
-					<img src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
-				</a>
 			</div>
 			<div class="customize-row">
-				<a>
+				<a onclick="decrementTomatoes()">
 					<img src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
 				</a>
 				<img src="Assets/Images/Customize/split_tomato.png" class="customize-row-image">
-				<a>
+				<a onclick="incrementTomatoes()">
 					<img src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
 				</a>
+				<h1 class="counter" id="tomato"> 1 </h1>
 			</div>
 			<div class="customize-row">
-				<a>
+				<a onclick="decrementCheese()">
 					<img src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
 				</a>
 				<img src="Assets/Images/Customize/split_cheese.png" class="customize-row-image">
-				<a>
+				<a onclick="incrementCheese()">
 					<img src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
 				</a>
+				<h1 class="counter" id="cheese"> 1 </h1>
+
 			</div>
 			<div class="customize-row">
-				<a>
+				<a onclick="decrementPatties()">
 					<img src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
 				</a>
 				<img src="Assets/Images/Customize/split_meat.png" class="customize-row-image">
-				<a>
+				<a onclick="incrementPatties()">
 					<img src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
 				</a>
+				<h1 class="counter" id="patties"> 1 </h1>
+
 			</div>
 			<div class="customize-row">
-				<a>
-					<img src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
-				</a>
 				<img src="Assets/Images/Customize/split_bun_bot.png" class="customize-row-image">
-				<a>
-					<img src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
-				</a>
 			</div>
 
 		</div>
