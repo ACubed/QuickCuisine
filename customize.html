@@ -20,8 +20,9 @@
 			} 
 			if(numTomatoes == maxIngredients){
 				document.getElementById('tomatoPlus').src="Assets/Images/Buttons/button_plus_disabled.png";
-			} else {
+			} else { //enable minus
 				document.getElementById('tomatoMinus').src="Assets/Images/Buttons/button_minus.png";
+				document.getElementById('tomatoImage').style.opacity = 1;
 			}
 		}
 
@@ -32,6 +33,7 @@
 			}
 			if(numTomatoes == 0){ //disable the minus button
 				document.getElementById('tomatoMinus').src="Assets/Images/Buttons/button_minus_disabled.png";
+				document.getElementById('tomatoImage').style.opacity = 0.3;
 			} else{ //enable the plus button
 				document.getElementById('tomatoPlus').src="Assets/Images/Buttons/button_plus.png";
 			}
@@ -47,6 +49,7 @@
 				document.getElementById('cheesePlus').src="Assets/Images/Buttons/button_plus_disabled.png";
 			} else { //enable the minus
 				document.getElementById('cheeseMinus').src="Assets/Images/Buttons/button_minus.png";
+				document.getElementById('cheeseImage').style.opacity = 1;
 			}
 		}
 
@@ -57,6 +60,7 @@
 			}
 			if(numCheese == 0){//disable the minus button
 				document.getElementById('cheeseMinus').src="Assets/Images/Buttons/button_minus_disabled.png";
+				document.getElementById('cheeseImage').style.opacity = 0.3;
 			} else{ //enable the plus button
 				document.getElementById('cheesePlus').src="Assets/Images/Buttons/button_plus.png";
 			}
@@ -72,6 +76,8 @@
 				document.getElementById('pattyPlus').src="Assets/Images/Buttons/button_plus_disabled.png";
 			} else { //enable the minus
 				document.getElementById('pattyMinus').src="Assets/Images/Buttons/button_minus.png";
+				
+				document.getElementById('pattyImage').style.opacity = 1;
 			}
 		}
 		function decrementPatties() {
@@ -81,6 +87,7 @@
 			}
 			if(numPatties == 0){ //disable the minus button
 				document.getElementById('pattyMinus').src="Assets/Images/Buttons/button_minus_disabled.png";
+				document.getElementById('pattyImage').style.opacity = 0.3;
 			} else{ //enable the plus button
 				document.getElementById('pattyPlus').src="Assets/Images/Buttons/button_plus.png";
 			}
@@ -98,17 +105,16 @@
 			</a>
 
 		</nav>
-
 		<div class="customize-container">
-
-			<div class="customize-row">
+			<div class=c
+			<div lass="customize-row">
 				<img src="Assets/Images/Customize/split_bun.png" class="customize-row-image">
 			</div>
 			<div class="customize-row">
 				<a onclick="decrementTomatoes()">
 					<img id="tomatoMinus" src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
 				</a>
-				<img src="Assets/Images/Customize/split_tomato.png" class="customize-row-image">
+				<img id="tomatoImage" src="Assets/Images/Customize/split_tomato.png" class="customize-row-image">
 				<a onclick="incrementTomatoes()">
 					<img id="tomatoPlus" src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
 				</a>
@@ -118,7 +124,7 @@
 				<a onclick="decrementCheese()">
 					<img id="cheeseMinus" src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
 				</a>
-				<img src="Assets/Images/Customize/split_cheese.png" class="customize-row-image">
+				<img id="cheeseImage" src="Assets/Images/Customize/split_cheese.png" class="customize-row-image">
 				<a onclick="incrementCheese()">
 					<img id="cheesePlus" src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
 				</a>
@@ -129,7 +135,7 @@
 				<a onclick="decrementPatties()">
 					<img id="pattyMinus" src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
 				</a>
-				<img src="Assets/Images/Customize/split_meat.png" class="customize-row-image">
+				<img id="pattyImage" src="Assets/Images/Customize/split_meat.png" class="customize-row-image">
 				<a onclick="incrementPatties()">
 					<img id="pattyPlus" src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
 				</a>
@@ -143,7 +149,8 @@
 		</div>
 		<nav class="sidebar">
 			<a class="cart" href="menu.html">
-				<i class="fas fa-arrow-circle-right"></i>
+				<!-- <i class="fas fa-arrow-circle-right"></i> -->
+				<img src="Assets/Images/Buttons/button_add.png" width="100%"></img>
 			</a>
 		</nav>
 

@@ -152,6 +152,6 @@ function createItem(element) {
         itemDiv.appendChild(itemCals);
         itemDiv.appendChild(itemTitle);
         itemDiv.appendChild(itemQuantity);
-        var cartDiv = document.getElementsByClassName('Cart');
-        cartDiv[0].appendChild(itemDiv);
+        var cartDiv = document.getElementsByClassName('Cart')[0];
+        cartDiv.appendChild(itemDiv);
 }

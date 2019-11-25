@@ -303,8 +303,8 @@ button:active{
 }
 
 .customize-row-image {
-    height: 160px;
-    width: 500px;
+    height: 80%;
+    width: 40%;
 }
 
 .btn-plus{
@@ -391,7 +391,7 @@ input[type=text], input[type=password] {
 }
 
 .Cart {
-    height: 80%;
+    height: 70%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -402,4 +402,19 @@ input[type=text], input[type=password] {
     width: 100%;
     display: flex;
     flex-direction: row;
+}
+
+.total {
+    padding: 4%;
+}
+
+.cart-item-container {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.cart-item-title {
+    float: left;
+    font-size: 2rem;
 }
