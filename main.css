@@ -352,7 +352,7 @@ button:active{
     height: auto;
     padding: 10px;
     position: absolute;
-    right:150px;
+    right:125px;
     background-color: rgb(85, 141, 196);
     visibility: visible;
     display: flex;
