@@ -208,7 +208,7 @@ button:active{
     flex-direction: row;
 }
 
-.sidebar {rgb()33,33_,33
+.sidebar {
     background-color: rgb(27, 24, 24);
     display: flex;
     flex-direction: column;
@@ -259,11 +259,10 @@ button:active{
 .category img {
     width: 100%;
     height: 100%;
-
+}
 .category.selected {
     opacity:1;
-    background-color: rgba(0,84,166,0.4);
-}   background-color: rgba(0,84,166,0.4);
+    background-color: rgba(60,60,60);
 }
 
 .category:hover{
@@ -273,7 +272,7 @@ button:active{
 
 /* ----------------------------- Login ---------------------------*/
 
-.login {1515157707
+.login {
     color: white;
     font-size: 5rem;
     width: 100%;
@@ -339,10 +338,12 @@ button:active{
     height: 50%;
     position: absolute;
     right:150px;
-    background-color: rgb(85,141,196);
+    background-color: rgb(50,50,50);
     visibility: visible;
-    align-items: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
 .login-container.hidden {
