@@ -6,26 +6,38 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3d46d02806.js"></script>
 </head>
-<body>
-<h1>Checkout</h1>
-<div class="checkout-container">
-    <div class="Cart">
 
+<body>
+
+    <div class="checkout-title">
+        <h1 class="checkout-header">Checkout</h1>
     </div>
-    <div class="Totals">
-        <h1 class="total" id="subtotal">Subtotal: $0.00</h1>
-        <h1 class="total" id="tax">Tax: $0.00</h1>
-        <h1 class="total" id="total">Total: $0.00</h1>
-        <h1 class="total" id="total-cals">Cals: 0 kcal</h1>
-        <a href="end.html">
-            <button class="checkout-button">
-                Checkout
-            </button>
-        </a>
+    <div class="checkout-container">
+        <div class="Cart">
+
+        </div>
+
+        <div class="Totals">
+            <a class="forward" href="menu.html">
+                <i class="fas fa-arrow-circle-left"></i>
+            </a>
+            <div class="total-text">
+                <h1 class="total" id="subtotal">Subtotal: $0.00</h1>
+            </div>
+            <div class="total-text">
+                <h1 class="total" id="tax">Tax: $0.00</h1>
+            </div>
+            <div class="total-text">
+                <h1 class="total" id="total">Total: $0.00</h1>
+            </div>
+            <div class="total-text">
+                <h1 class="total" id="total-cals">Cals: 0 kcal</h1>
+            </div>
+            <a class="backward " href="end.html">
+                <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
     </div>
-    
-    
-</div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="checkout.js"></script>

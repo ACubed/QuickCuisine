@@ -1,12 +1,30 @@
 
 function addCartItem(cartItem) {
     let name = cartItem.getImagePath();
-    
+    let cq = getCookie("cartQuantity");
+    var qString = "";
+    var totalQuantity = 1;
+    console.log(document.cookie);
+    if (cq != null) {
+        let array = cq.split(',');
+        totalQuantity = parseInt(array[1]) + 1;
+        qString = "cartQuantity="+parseInt(totalQuantity) + "; path=/";
+        document.cookie = qString;
+    } else {
+        qString = "cartQuantity=1; path=/";
+        document.cookie = qString;
+    }
+
+    let flag = document.getElementById("cart-counter");
+    flag.innerHTML = totalQuantity.toString();
+
+    console.log(document.cookie);
+
     var quantity = parseInt(cartItem.getQuantity());
 
     var c = getCookie(name);
     if (c !== null) {
-        var array = c.split(',');
+        let array = c.split(',');
         quantity += parseInt(array[1]);
     }
     var cost = cartItem.getCost();
@@ -14,6 +32,7 @@ function addCartItem(cartItem) {
     var itemTitle = cartItem.getName();
     var cString = name + "=" + itemTitle + "," + quantity + "," + cost + "," + cals + ";";
     document.cookie = cString;
+
 }
 
 function getCookie(name) {

@@ -17,7 +17,7 @@ html,body:hover {
 button {
     font-weight: bold;
     text-decoration: none;
-    padding:0;
+    padding:0; 
     background-color: rgba(60, 60, 60, .7); 
     color: white;
     /* background-color: rgba(24, 24, 24, 1); */
@@ -53,9 +53,13 @@ button:active{
     justify-content: start;
     justify-items: center;
     margin: auto auto;
+    background-image: url('Assets/Images/Burger_old.jpg');
+    background-size: cover;
 }
 
 .logo {
+    background-color: white;
+    padding: 20px;
     height: auto;
     width: 40%;
     margin: auto auto;
@@ -276,7 +280,7 @@ button:active{
 .login {
     color: white;
     font-size: 5rem;
-    width: 100%;
+    width: auto;
     opacity: 0.6;
     height: auto;
 
@@ -316,8 +320,15 @@ button:active{
     color: white;
     margin-left: -30px;
 }
+
+.cart-counter{
+    background-color: red;
+    color: white;
+    margin-top: 350%;
+    margin-left: 30px;
+}
 /* ----------------------------- Cart ---------------------------*/
-.cart {
+.cart{
     margin-top: auto;
     width: 100%;
     height: auto;
@@ -326,7 +337,7 @@ button:active{
     font-size: 5rem;
 }
 
-.cart:hover, .login:hover{
+.backward:hover,.forward:hover,.cart:hover, .login:hover{
     opacity: 1;
     cursor: pointer;
 }
@@ -335,11 +346,12 @@ button:active{
 /* ----------------------------- Login ---------------------------*/
 
 .login-container {
-    width: 50%;
-    height: 50%;
+    width: auto;
+    height: auto;
+    padding: 10px;
     position: absolute;
     right:150px;
-    background-color: rgb(50,50,50);
+    background-color: rgb(85, 141, 196);
     visibility: visible;
     display: flex;
     align-items: center;
@@ -390,31 +402,99 @@ input[type=text], input[type=password] {
     height: 100%;
 }
 
+.checkout-title {
+    top:0;
+    margin-top:0;
+    padding-top:10px;
+    height:10%;
+    width:100%;
+    background-image: url('Assets/Images/Burger_old.jpg');
+    background-size: cover;
+    background-color: rgb(60,60,60);
+    color:white;
+    text-align: center;
+    font-size:20px;
+    justify-content: center;
+}
+.checkout-header {
+    margin-top:0;
+}
+
 .Cart {
     height: 70%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    overflow-y: scroll; 
 }
 
 .Totals {
-    height: 30%;
+    height: 20%;
     width: 100%;
     display: flex;
     flex-direction: row;
+    background-color: rgb(60,60,60);
+    color:white;
+    justify-content:center;
 }
 
 .total {
-    padding: 4%;
+    padding: 1%;
 }
 
 .cart-item-container {
     display: flex;
     flex-direction: row;
-
+    width: 100%;
+    height: 20%;
 }
 
 .cart-item-title {
-    float: left;
+    align-self: center;
     font-size: 2rem;
+    padding: 2%;
+}
+.cart-item-cals {
+    align-self: center;
+    font-size: 2rem;
+    padding: 2%;
+}
+.cart-item-quantity {
+    align-self: center;
+    font-size: 2rem;
+    padding: 2%;
+}
+.cart-item-cost {
+    align-self: center;
+    font-size: 2rem;
+    padding: 2%;
+}
+
+.cart-item-img {
+    display: inline-block;
+    width: 150px;
+    height: auto;
+}
+
+.total-text{
+    width:20%;
+}
+
+.forward{
+    color: white;
+    font-size: 5rem;
+    width: 10%;
+    opacity: 0.6;
+    height: auto;
+    text-align: center;
+}
+.backward {
+    right:0;
+    color: white;
+    font-size: 5rem;
+    width: 10%;
+    opacity: 0.6;
+    height: auto;
+    text-align: center;
 }

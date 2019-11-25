@@ -109,12 +109,14 @@ function buildListFromCookies() {
 }
 
 function UpdateCart() {
-    let totalCost = 0;
-    let totalCals = 0;
+    var totalCost = 0;
+    var totalCals = 0;
+    var totalQuantity = 0;
 
     ItemList.forEach(element => {
         totalCals+=element.getCals();
         totalCost += element.getCost();
+        totalQuantity +=element.getQuantity();
     });
     
 
@@ -128,6 +130,8 @@ function UpdateCart() {
     tax.innerHTML = 'Tax: $' + taxTotal.toFixed(2); 
     var cals = document.getElementById('total-cals');
     cals.innerHTML = 'Total Calories: ' + totalCals.toString(); 
+    // var cartCounter = document.getElementById("cart-counter");
+    // cartCounter.innerHTML = totalQuantity;
     ItemList.forEach(element => {
         createItem(element);
     });
@@ -140,18 +144,32 @@ function createItem(element) {
         itemDiv.classList.add('cart-item-container');
         var itemImg = document.createElement("img");
         itemImg.classList.add('cart-item-img');
+        itemImg.src = ("Assets/Images/Food/"+ element.getImagePath().toString() +".png").replace(/\s/g, '');
+
+        var itemCost = document.createElement("cart-item-cost");
+        itemCost.innerHTML = "$" + element.getCost();
+        itemCost.classList.add('cart-item-cost');
         var itemTitle = document.createElement("h1");
         itemTitle.innerHTML = element.getName();
         itemTitle.classList.add('cart-item-title');
         var itemCals = document.createElement("p");
-        itemCals.innerHTML = element.getCals();
+        itemCals.innerHTML = element.getCals() + ' Cals';
         itemCals.classList.add('cart-item-cals');
         var itemQuantity = document.createElement("p");
-        itemCals.classList.add('cart-item-quantity');
+        itemQuantity.innerHTML = 'Quantity: ' + element.getQuantity();
+        var increaseQuantity = document.createElement("img");
+        var decreaseQuantity = document.createElement("img");
+        increaseQuantity.src = "Assets/Buttons/button_plus.png";
+        decreaseQuantity.src = "Assets/Buttons/button_minus.png";
+        increaseQuantity.classList.add('cart-item-plusorminus')
+        decreasequantity.classList.add('cart-item-plusorminus')
         itemDiv.appendChild(itemImg);
-        itemDiv.appendChild(itemCals);
         itemDiv.appendChild(itemTitle);
+        itemDiv.appendChild(itemCals);
+        itemDiv.appendChild(decreaseQuantity);
         itemDiv.appendChild(itemQuantity);
+        itemDiv.appendChild(increaseQuantity);
+        itemDiv.appendChild(itemCost);
         var cartDiv = document.getElementsByClassName('Cart')[0];
         cartDiv.appendChild(itemDiv);
 }
