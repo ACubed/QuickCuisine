@@ -173,8 +173,6 @@ function createItem(element, even) {
         decreaseQuantity.src = ("Assets/Images/Buttons/button_minus.png").replace(/\s/g, '');
         increaseQuantity.classList.add('cart-item-plus')
         decreaseQuantity.classList.add('cart-item-minus')
-        increaseQuantity.setAttribute('id', 'cart-item-button');
-        decreaseQuantity.setAttribute('id', 'cart-item-button');
         itemDiv.appendChild(itemImg);
         itemDiv.appendChild(itemTitle);
         itemDiv.appendChild(itemCals);
@@ -195,7 +193,6 @@ function createItem(element, even) {
 
 
 $('#cart-item-button').on('click', function () {
-    console.log("WTF");
     alert("Feature not yet implemented!");
     // cart.add(new CartItem(Burger1, 1))
 });

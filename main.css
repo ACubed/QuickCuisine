@@ -55,6 +55,7 @@ button:active{
     margin: auto auto;
     background-size: cover;
     background-image: url('Assets/Images/Burger_old.jpg');
+    color: white;
 }
 
 .logo {
