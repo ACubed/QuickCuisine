@@ -14,39 +14,78 @@
 
 		//TOMATOES
 		function incrementTomatoes() {
-			if(numTomatoes < maxIngredients)
+			if(numTomatoes < maxIngredients) {
 				numTomatoes++;
-		  	document.getElementById("tomato").innerHTML = numTomatoes;
+		  		document.getElementById("tomato").innerHTML = numTomatoes;
+			} 
+			if(numTomatoes == maxIngredients){
+				document.getElementById('tomatoPlus').src="Assets/Images/Buttons/button_plus_disabled.png";
+			} else {
+				document.getElementById('tomatoMinus').src="Assets/Images/Buttons/button_minus.png";
+			}
 		}
+
 		function decrementTomatoes() {
-			if(numTomatoes > 0)
+			if(numTomatoes > 0) {
 				numTomatoes--;
-		  	document.getElementById("tomato").innerHTML = numTomatoes;
+				  document.getElementById("tomato").innerHTML = numTomatoes;
+			}
+			if(numTomatoes == 0){ //disable the minus button
+				document.getElementById('tomatoMinus').src="Assets/Images/Buttons/button_minus_disabled.png";
+			} else{ //enable the plus button
+				document.getElementById('tomatoPlus').src="Assets/Images/Buttons/button_plus.png";
+			}
 		}
 
 		//CHEESE
 		function incrementCheese() {
-			if(numCheese < maxIngredients)
+			if(numCheese < maxIngredients){
 				numCheese++;
-		  	document.getElementById("cheese").innerHTML = numCheese;
+				document.getElementById("cheese").innerHTML = numCheese;
+			}
+			if(numCheese == maxIngredients){ //disable the plus
+				document.getElementById('cheesePlus').src="Assets/Images/Buttons/button_plus_disabled.png";
+			} else { //enable the minus
+				document.getElementById('cheeseMinus').src="Assets/Images/Buttons/button_minus.png";
+			}
 		}
+
 		function decrementCheese() {
-			if(numCheese > 0)
+			if(numCheese > 0){
 				numCheese--;
-		  	document.getElementById("cheese").innerHTML = numCheese;
+				  document.getElementById("cheese").innerHTML = numCheese;
+			}
+			if(numCheese == 0){//disable the minus button
+				document.getElementById('cheeseMinus').src="Assets/Images/Buttons/button_minus_disabled.png";
+			} else{ //enable the plus button
+				document.getElementById('cheesePlus').src="Assets/Images/Buttons/button_plus.png";
+			}
 		}
 
 		//PATTIES
 		function incrementPatties() {
-			if(numPatties< maxIngredients)
+			if(numPatties< maxIngredients) {
 				numPatties++;
-		  	document.getElementById("patties").innerHTML = numPatties;
+				  document.getElementById("patties").innerHTML = numPatties;
+			}
+			if(numPatties == maxIngredients){ //disable the plus
+				document.getElementById('pattyPlus').src="Assets/Images/Buttons/button_plus_disabled.png";
+			} else { //enable the minus
+				document.getElementById('pattyMinus').src="Assets/Images/Buttons/button_minus.png";
+			}
 		}
 		function decrementPatties() {
-			if(numPatties> 0)
+			if(numPatties> 0){
 				numPatties--;
-		  	document.getElementById("patties").innerHTML = numPatties;
+				  document.getElementById("patties").innerHTML = numPatties;
+			}
+			if(numPatties == 0){ //disable the minus button
+				document.getElementById('pattyMinus').src="Assets/Images/Buttons/button_minus_disabled.png";
+			} else{ //enable the plus button
+				document.getElementById('pattyPlus').src="Assets/Images/Buttons/button_plus.png";
+			}
 		}
+
 	</script>
 </head>
 
@@ -67,32 +106,32 @@
 			</div>
 			<div class="customize-row">
 				<a onclick="decrementTomatoes()">
-					<img src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
+					<img id="tomatoMinus" src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
 				</a>
 				<img src="Assets/Images/Customize/split_tomato.png" class="customize-row-image">
 				<a onclick="incrementTomatoes()">
-					<img src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
+					<img id="tomatoPlus" src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
 				</a>
 				<h1 class="counter" id="tomato"> 1 </h1>
 			</div>
 			<div class="customize-row">
 				<a onclick="decrementCheese()">
-					<img src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
+					<img id="cheeseMinus" src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
 				</a>
 				<img src="Assets/Images/Customize/split_cheese.png" class="customize-row-image">
 				<a onclick="incrementCheese()">
-					<img src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
+					<img id="cheesePlus" src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
 				</a>
 				<h1 class="counter" id="cheese"> 1 </h1>
 
 			</div>
 			<div class="customize-row">
 				<a onclick="decrementPatties()">
-					<img src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
+					<img id="pattyMinus" src="Assets/Images/Buttons/button_minus.png" class="btn-customize">
 				</a>
 				<img src="Assets/Images/Customize/split_meat.png" class="customize-row-image">
 				<a onclick="incrementPatties()">
-					<img src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
+					<img id="pattyPlus" src="Assets/Images/Buttons/button_plus.png" class="btn-customize">
 				</a>
 				<h1 class="counter" id="patties"> 1 </h1>
 
@@ -103,9 +142,6 @@
 
 		</div>
 		<nav class="sidebar">
-			<a class="login">
-				<i class="fas fa-user-circle"></i>
-			</a>
 			<a class="cart" href="menu.html">
 				<i class="fas fa-arrow-circle-right"></i>
 			</a>

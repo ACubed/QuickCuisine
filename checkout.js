@@ -1,4 +1,4 @@
-
+var ItemList = [];
 
 function getCookie(name) {
     var dc = document.cookie;
@@ -32,6 +32,7 @@ function splitCookie(entry) {
 window.onload = function() {
     console.log(document.cookie);
     buildListFromCookies();
+    UpdateCart();
 };
 
 
@@ -83,32 +84,71 @@ function Item(name,imagePath, cost, cal) {
 
 
 function buildListFromCookies() {
-
     let cookieList = document.cookie;
-
     let cookies = cookieList.split(';');
-    console.log(cookies);
 
-    var itemList = [];
+    ItemList = [];
     for (let i = 0; i < cookies.length; i++) {
         let params = cookies[i].split(',');
         console.log(params);
-
-        //let Burger1 = new Item("Mr. Classic","burger_classic" ,8.99, 800);
 
         let separator = params[0].indexOf('=');
 
         let tag = params[0].slice(0, separator);       
         let name = params[0].slice(separator + 1, params[0].length);
+        let quantity = params[1];
         let cost = params[2];
-        let cals = param
+        let cals = params[3];
  
-        console.log(tag);       
-        console.log(name);
-        // let foodItem = new Item(name,tag )
-         // 
+        let result = new Item(name, tag, cost, cals);
+
+        ItemList.push(new CartItem(result, quantity));
     }
 
+    console.log(ItemList);
+}
+
+function UpdateCart() {
+    let totalCost = 0;
+    let totalCals = 0;
+
+    ItemList.forEach(element => {
+        totalCals+=element.getCals();
+        totalCost += element.getCost();
+    });
+    
+
+    let taxTotal = totalCost * 0.12;    
+    let actualTotal = totalCost + taxTotal;
+    var subtotal = document.getElementById('subtotal');
+    subtotal.innerHTML = 'Subtotal: $' + totalCost.toFixed(2);
+    var total = document.getElementById('total');
+    total.innerHTML = 'Total: $' + actualTotal.toFixed(2); 
+    var tax = document.getElementById('tax');
+    tax.innerHTML = 'Tax: $' + taxTotal.toFixed(2); 
+    var cals = document.getElementById('total-cals');
+    cals.innerHTML = 'Total Calories: ' + totalCals.toString(); 
+    ItemList.forEach(element => {
+        createItem(element);
+    });
+    
 
 }
 
+function createItem(element) {
+    var itemDiv = document.createElement("div");
+        itemDiv.classList.add('cart-item-container');
+        var itemImg = document.createElement("img");
+        itemImg.classList.add('cart-item-img');
+        var itemTitle = document.createElement("h1");
+        itemTitle.innerHTML = element.getName();
+        itemTitle.classList.add('cart-item-title');
+        var itemCals = document.createElement("p");
+        itemCals.innerHTML = element.getCals();
+        itemCals.classList.add('cart-item-cals');
+        itemDiv.appendChild(itemImg);
+        itemDiv.appendChild(itemCals);
+        itemDiv.appendChild(itemTitle);
+        var cartDiv = document.getElementsByClassName('Cart');
+        cartDiv[0].appendChild(itemDiv);
+}

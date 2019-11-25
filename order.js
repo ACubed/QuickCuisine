@@ -129,9 +129,6 @@ let Burger8 = new Item("The Honey Mustard", "burger_full_stack",6.99, 640);
 // let BigBurger = new Item("Big Burger", 5.99, 600);
 // let BigBurger = new Item("Big Burger", 5.99, 600);
 
-// cart
-
-// let cart = new Cart();
 
 //events
 
@@ -139,7 +136,6 @@ let Burger8 = new Item("The Honey Mustard", "burger_full_stack",6.99, 640);
 $('#add-burger1').on('click', function () {
     addCartItem(new CartItem(Burger1, 1))
     // cart.add(new CartItem(Burger1, 1))
-    console.log(document.cookie);
 });
 $('#add-burger2').on('click', function () {
     addCartItem(new CartItem(Burger2, 1))
