@@ -98,8 +98,10 @@ function buildListFromCookies() {
 
         let separator = params[0].indexOf('=');
 
-        let p = params[0].slice(0, separator);       
+        let tag = params[0].slice(0, separator);       
         let name = params[0].slice(separator + 1, params[0].length);
+        let cost = params[2];
+        let cals = param
  
         console.log(tag);       
         console.log(name);
