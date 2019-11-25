@@ -18,8 +18,9 @@ button {
     font-weight: bold;
     text-decoration: none;
     padding:0;
-    /* background-color: rgba(0, 84, 166, 1); */
-    background-color: rgba(24, 24, 24, 1);
+    background-color: rgba(60, 60, 60, .7); 
+    color: white;
+    /* background-color: rgba(24, 24, 24, 1); */
     border: none;
     cursor: pointer;
     outline: none;
