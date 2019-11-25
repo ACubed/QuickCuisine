@@ -43,8 +43,6 @@ button:active{
 /*-----------------------------Start Screen-----------------------------*/
 .icon {
     cursor: pointer;
-    background-image: url('Assets/Images/Burger_old.jpg');
-    background-size: cover;
 }
 
 .title {
