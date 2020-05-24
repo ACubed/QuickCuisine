@@ -1,7 +1,7 @@
 # COMP 3020 HCI Group Project - Group 23
 
 Online ordering website for a fast-food restaurant.
-Developed in HTML, CSS, Javascript, jQuery
+Developed in HTML, CSS, Javascript, and jQuery.
 ## Contributers
 
 <table>
