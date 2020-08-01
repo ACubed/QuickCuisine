@@ -2,7 +2,8 @@
 
 Online ordering website for a fast-food restaurant.
 Developed in HTML, CSS, Javascript, and jQuery.
-## Contributers
+
+## Contributors
 
 <table>
 <tr>
